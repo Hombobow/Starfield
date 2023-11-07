@@ -22,7 +22,9 @@ void draw()
 {
   background(135, 206, 235);
   pergoda();
-  button(225, 20, "Lighter");
+  fill(0);
+  ellipse(20, 10, 10, 10);
+  button(225, 20);
   fill(0);
   ellipse(10, 10, 10, 10);
   device.show();
