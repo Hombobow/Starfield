@@ -23,6 +23,8 @@ void draw()
   background(135, 206, 235);
   pergoda();
   button(225, 20, "Lighter");
+  fill(0);
+  ellipse(10, 10, 10, 10);
   device.show();
   device.move();
   //System.out.println(mouseX + " " + mouseY);
@@ -144,8 +146,8 @@ boolean checker() {
   }
   return false;
 }
-void scale(int x , int y){
-  fill(0,255,0);
+void scale(int x, int y) {
+  fill(0, 255, 0);
   beginShape();
   curveVertex(x, y);
   curveVertex(x, y);
@@ -156,18 +158,18 @@ void scale(int x , int y){
   endShape();
 }
 void pergoda() {
-  fill(150,75,0);
-  rect(100,200,30,500);
-  rect(470,200,30,500);
+  fill(150, 75, 0);
+  rect(100, 200, 30, 500);
+  rect(470, 200, 30, 500);
   beginShape();
-    vertex(600, 200);
-    vertex(0, 200);
-    vertex(100, 100);
-    vertex(500, 100);
+  vertex(600, 200);
+  vertex(0, 200);
+  vertex(100, 100);
+  vertex(500, 100);
   endShape();
-  for (int i = 200, j = 0; i >= 100; i -= 10, j += 10){
+  for (int i = 200, j = 0; i >= 100; i -= 10, j += 10) {
     for (int k = 0 + j; k < 600 - j; k += 15) {
-      scale(k,i);
+      scale(k, i);
     }
   }
 }
