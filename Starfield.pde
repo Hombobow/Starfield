@@ -1,4 +1,5 @@
-int numPart = 2000;
+//Jacky
+int numPart = 5000;
 int firecrackerY = 300;
 int lineY = 250;
 boolean bc = false;
@@ -11,6 +12,7 @@ Spark dot = new Spark(300, 250, 650);
 void setup()
 {
   size(600, 800);
+  //Jaden
   for (int i = 0; i < numPart; i++) {
     explosion[i] = new Particle(2000, 2000);
   }
@@ -26,16 +28,17 @@ void draw()
   button(225, 20);
   device.show();
   device.move();
-  //System.out.println(mouseX + " " + mouseY);
   Firecracker fire = new Firecracker(firecrackerY, lineY);
   fire.show();
   dot.show();
   stroke(0);
   strokeWeight(0);
+  //Jacky
   if (checker()) {
     for (int i = 0; i < numPart; i++) {
       explosion[i] = new Particle(300, dot.myY);
     }
+
     for (int i = 0; i < 10; i++) {
       boom[i] = new Rocket(300, dot.myY);
     }
@@ -48,6 +51,8 @@ void draw()
     boom[i].move();
     boom[i].rshow();
   }
+
+  //Jacky
   for (int i = 250; i < 650; i+=100) {
     if (dot.myY >= i && dot.myY <= i + 50) {
       fill(255);
@@ -65,6 +70,7 @@ void draw()
   strokeWeight(0);
 }
 
+//Jaden
 class lighter
 {
   int myX, myY, mySpeed, end;
@@ -117,9 +123,8 @@ class lighter
   }
 }
 
-
+//Jaden
 void button(int myX, int myY) {
-  //Jaden
   if (mouseX > myX && mouseX < myX + 150 && mouseY > myY && mouseY < myY + 50 && mousePressed == true) {
     fill(255, 0, 0);
     bc = true;
@@ -136,7 +141,7 @@ void button(int myX, int myY) {
     text("Lighter", myX + 75, myY +30);
   }
 }
-
+//Jacky
 boolean checker() {
   for (int i = 325; i < 700; i+=100) {
     if (dot.myY == i) {
@@ -145,6 +150,7 @@ boolean checker() {
   }
   return false;
 }
+//Jaden
 void scale(int x, int y) {
   fill(0, 255, 0);
   beginShape();
@@ -156,6 +162,7 @@ void scale(int x, int y) {
   curveVertex(x + 20, y);
   endShape();
 }
+//Jaden & Jacky
 void pergoda() {
   fill(150, 75, 0);
   rect(100, 200, 30, 500);
@@ -173,6 +180,7 @@ void pergoda() {
   }
 }
 
+//Jacky
 class Firecracker
 {
   int myX, myFY, myLY, myWidth;
@@ -200,7 +208,7 @@ class Firecracker
   }
 }
 
-
+//Jacky && Jaden
 class Particle
 {
 
@@ -225,6 +233,7 @@ class Particle
   }
 }
 
+//Jaden & Jacky
 class Rocket extends Particle
 {
   int myWidth, myLength;
@@ -250,7 +259,7 @@ class Rocket extends Particle
   }
 }
 
-
+//Jacky && Jaden
 class Spark
 {
   int mySpeed, myX, myY, end;
